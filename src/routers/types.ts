@@ -3,23 +3,8 @@ import { ComponentType } from "react";
 export interface LocationStates {
   "/"?: {};
   "/#"?: {};
-  "/home-2"?: {};
-  "/home-3"?: {};
-  "/home-1-header-2"?: {};
   //
   "/listing-flights"?: {};
-  //
-  "/listing-stay"?: {};
-  "/listing-stay-map"?: {};
-  "/listing-stay-detail"?: {};
-  //
-  "/listing-experiences"?: {};
-  "/listing-experiences-map"?: {};
-  "/listing-experiences-detail"?: {};
-  //
-  "/listing-real-estate"?: {};
-  "/listing-real-estate-map"?: {};
-  "/listing-real-estate-detail"?: {};
   //
   "/listing-car"?: {};
   "/listing-car-map"?: {};
@@ -48,10 +33,11 @@ export interface LocationStates {
   "/add-listing-10"?: {};
   //
   "/author"?: {};
-  "/search"?: {};
+  "/search"?: {}; 
   "/about"?: {};
   "/contact"?: {};
   "/login"?: {};
+
   "/signup"?: {};
   "/forgot-pass"?: {};
   "/page404"?: {};

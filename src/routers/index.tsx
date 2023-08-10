@@ -3,12 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Page } from "./types";
 import ScrollToTop from "./ScrollToTop";
 import Footer from "shared/Footer/Footer";
-import PageHome from "containers/PageHome/PageHome";
 import Page404 from "containers/Page404/Page404";
-import ListingStayPage from "containers/ListingStayPage/ListingStayPage";
-import ListingStayMapPage from "containers/ListingStayPage/ListingStayMapPage";
-import ListingExperiencesPage from "containers/ListingExperiencesPage/ListingExperiencesPage";
-import ListingExperiencesMapPage from "containers/ListingExperiencesPage/ListingExperiencesMapPage";
 import ListingCarPage from "containers/ListingCarPage/ListingCarPage";
 import ListingCarMapPage from "containers/ListingCarPage/ListingCarMapPage";
 import CheckOutPage from "containers/CheckOutPage/CheckOutPage";
@@ -35,50 +30,17 @@ import PageAddListing7 from "containers/PageAddListing1/PageAddListing7";
 import PageAddListing8 from "containers/PageAddListing1/PageAddListing8";
 import PageAddListing9 from "containers/PageAddListing1/PageAddListing9";
 import PageAddListing10 from "containers/PageAddListing1/PageAddListing10";
-import PageHome2 from "containers/PageHome/PageHome2";
-import ListingRealEstateMapPage from "containers/ListingRealEstatePage/ListingRealEstateMapPage";
-import ListingRealEstatePage from "containers/ListingRealEstatePage/ListingRealEstatePage";
 import SiteHeader from "containers/SiteHeader";
-import ListingFlightsPage from "containers/ListingFlightsPage/ListingFlightsPage";
 import FooterNav from "components/FooterNav";
 import useWindowSize from "hooks/useWindowResize";
-import PageHome3 from "containers/PageHome/PageHome3";
-import ListingStayDetailPage from "containers/ListingDetailPage/listing-stay-detail/ListingStayDetailPage";
 import ListingCarDetailPage from "containers/ListingDetailPage/listing-car-detail/ListingCarDetailPage";
-import ListingExperiencesDetailPage from "containers/ListingDetailPage/listing-experiences-detail/ListingExperiencesDetailPage";
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: PageHome },
-  { path: "/#", exact: true, component: PageHome },
-  { path: "/home-1-header-2", exact: true, component: PageHome },
-  { path: "/home-2", component: PageHome2 },
-  { path: "/home-3", component: PageHome3 },
+  { path: "/", exact: true, component: ListingCarPage },
+  { path: "/#", exact: true, component: ListingCarPage },
   //
-  { path: "/listing-stay", component: ListingStayPage },
-  { path: "/listing-stay-map", component: ListingStayMapPage },
-  { path: "/listing-stay-detail", component: ListingStayDetailPage },
-  //
-  {
-    path: "/listing-experiences",
-    component: ListingExperiencesPage,
-  },
-  {
-    path: "/listing-experiences-map",
-    component: ListingExperiencesMapPage,
-  },
-  {
-    path: "/listing-experiences-detail",
-    component: ListingExperiencesDetailPage,
-  },
-  //
-  { path: "/listing-car", component: ListingCarPage },
   { path: "/listing-car-map", component: ListingCarMapPage },
   { path: "/listing-car-detail", component: ListingCarDetailPage },
-  //
-  { path: "/listing-real-estate-map", component: ListingRealEstateMapPage },
-  { path: "/listing-real-estate", component: ListingRealEstatePage },
-  //
-  { path: "/listing-flights", component: ListingFlightsPage },
   //
   { path: "/checkout", component: CheckOutPage },
   { path: "/pay-done", component: PayPage },

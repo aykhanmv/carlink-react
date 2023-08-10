@@ -8,7 +8,6 @@ import AvatarDropdown from "./AvatarDropdown";
 import CurrencyDropdown from "./CurrencyDropdown";
 import DropdownTravelers from "./DropdownTravelers";
 import { Link } from "react-router-dom";
-import HeroSearchForm2MobileFactory from "components/HeroSearchForm2Mobile/HeroSearchForm2MobileFactory";
 
 export interface MainNav2Props {
   className?: string;
@@ -24,10 +23,6 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
           <div className="hidden lg:block">
             <DropdownTravelers />
           </div>
-        </div>
-
-        <div className="lg:hidden flex-[3] max-w-lg !mx-auto md:px-3">
-          <HeroSearchForm2MobileFactory />
         </div>
 
         <div className="hidden md:flex flex-shrink-0 items-center justify-end flex-1 lg:flex-none text-neutral-700 dark:text-neutral-100">

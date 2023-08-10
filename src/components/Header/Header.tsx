@@ -1,21 +1,18 @@
 import React, { FC } from "react";
-import MainNav1 from "./MainNav1";
 import MainNav2 from "./MainNav2";
 
 export interface HeaderProps {
-  navType?: "MainNav1" | "MainNav2";
+  navType?: "MainNav2";
   className?: string;
 }
 
-const Header: FC<HeaderProps> = ({ navType = "MainNav1", className = "" }) => {
+const Header: FC<HeaderProps> = ({ navType = "MainNav2", className = "" }) => {
   const renderNav = () => {
     switch (navType) {
-      case "MainNav1":
-        return <MainNav1 />;
       case "MainNav2":
         return <MainNav2 />;
       default:
-        return <MainNav1 />;
+        return <MainNav2 />;
     }
   };
 

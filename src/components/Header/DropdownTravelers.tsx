@@ -14,28 +14,15 @@ interface SolutionItem {
 
 const solutions: SolutionItem[] = [
   {
-    name: "Stays",
-    description: "Stays rental description ",
-    href: "/listing-stay",
-    icon: IconFour,
-    active: true,
-  },
-  {
     name: "Flights",
     description: "Flights description",
-    href: "/listing-flights",
+    href: "/",
     icon: IconTwo,
-  },
-  {
-    name: "Things to do",
-    description: "Tour and experiences",
-    href: "/listing-experiences",
-    icon: IconOne,
   },
   {
     name: "Cars",
     description: "Car rental description",
-    href: "/listing-car",
+    href: "/",
     icon: IconThree,
   },
 ];
@@ -117,41 +104,6 @@ export default function DropdownTravelers() {
         )}
       </Popover>
     </div>
-  );
-}
-
-function IconOne() {
-  return (
-    <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M4.75 8.75C4.75 7.64543 5.64543 6.75 6.75 6.75H17.25C18.3546 6.75 19.25 7.64543 19.25 8.75V17.25C19.25 18.3546 18.3546 19.25 17.25 19.25H6.75C5.64543 19.25 4.75 18.3546 4.75 17.25V8.75Z"
-      ></path>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M8 4.75V8.25"
-      ></path>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M16 4.75V8.25"
-      ></path>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M7.75 10.75H16.25"
-      ></path>
-    </svg>
   );
 }
 
@@ -239,32 +191,6 @@ function IconThree() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-function IconFour() {
-  return (
-    <svg
-      width="36"
-      height="36"
-      stroke="currentColor"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M6.75024 19.2502H17.2502C18.3548 19.2502 19.2502 18.3548 19.2502 17.2502V9.75025L12.0002 4.75024L4.75024 9.75025V17.2502C4.75024 18.3548 5.64568 19.2502 6.75024 19.2502Z"
-      ></path>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M9.74963 15.7493C9.74963 14.6447 10.6451 13.7493 11.7496 13.7493H12.2496C13.3542 13.7493 14.2496 14.6447 14.2496 15.7493V19.2493H9.74963V15.7493Z"
-      ></path>
     </svg>
   );
 }

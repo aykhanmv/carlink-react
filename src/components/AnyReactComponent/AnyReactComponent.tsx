@@ -1,7 +1,5 @@
 import { Transition } from "@headlessui/react";
 import CarCard from "components/CarCard/CarCard";
-import ExperiencesCard from "components/ExperiencesCard/ExperiencesCard";
-import StayCard from "components/StayCard/StayCard";
 import { CarDataType, ExperiencesDataType, StayDataType } from "data/types";
 import React, { FC, Fragment } from "react";
 import { useState } from "react";
@@ -52,16 +50,6 @@ const AnyReactComponent: FC<AnyReactComponentProps> = ({
         leaveTo="opacity-0"
       >
         <div className="absolute z-50 bottom-full pb-3 -left-12 w-[260px] aspect-w-1">
-          {listing && (
-            <StayCard size="small" data={listing} className="shadow-2xl" />
-          )}
-          {experiences && (
-            <ExperiencesCard
-              size="small"
-              data={experiences}
-              className="shadow-2xl bg-white dark:bg-neutral-900 pt-3 px-3 rounded-3xl"
-            />
-          )}
           {car && <CarCard size="small" data={car} className="shadow-2xl " />}
         </div>
       </Transition>

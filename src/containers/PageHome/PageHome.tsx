@@ -3,7 +3,6 @@ import SectionSliderNewCategories from "components/SectionSliderNewCategories/Se
 import React from "react";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import SectionOurFeatures from "components/SectionOurFeatures/SectionOurFeatures";
-import SectionGridFeaturePlaces from "./SectionGridFeaturePlaces";
 import SectionHowItWork from "components/SectionHowItWork/SectionHowItWork";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
@@ -138,11 +137,7 @@ function PageHome() {
         {/* SECTION2 */}
         <SectionOurFeatures />
 
-        {/* SECTION */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionGridFeaturePlaces />
-        </div>
+
 
         {/* SECTION */}
         <SectionHowItWork />
