@@ -4,7 +4,7 @@ yarn install
 yarn start
 ```
 
-## !!! Do not forget to add .gitignor file !!!
+## !!! Do not forget to add .gitignore file !!!
 
 ```
 touch .gitignore
