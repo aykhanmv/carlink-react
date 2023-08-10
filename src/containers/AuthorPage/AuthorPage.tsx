@@ -145,6 +145,7 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
               ))}
             </Tab.List>
             <Tab.Panels>
+
               <Tab.Panel className="">
                 <div className="mt-8 grid grid-cols-1 gap-6 md:gap-7 sm:grid-cols-2">
                   {DEMO_CAR_LISTINGS.filter((_, i) => i < 4).map((stay) => (

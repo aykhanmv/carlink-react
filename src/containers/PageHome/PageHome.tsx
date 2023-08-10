@@ -137,7 +137,10 @@ function PageHome() {
         {/* SECTION2 */}
         <SectionOurFeatures />
 
-
+        {/* SECTION */}
+        <div className="relative py-16">
+          <BackgroundSection />
+        </div>
 
         {/* SECTION */}
         <SectionHowItWork />

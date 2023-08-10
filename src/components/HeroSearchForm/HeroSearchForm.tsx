@@ -49,7 +49,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
     switch (tabActive) {
       case "Cars":
         return <RentalCarSearchForm />;
-
+        
       default:
         return null;
     }

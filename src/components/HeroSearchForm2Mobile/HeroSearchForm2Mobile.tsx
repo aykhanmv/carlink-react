@@ -109,11 +109,13 @@ const HeroSearchForm2Mobile = () => {
                       </Tab.List>
                       <div className="flex-1 pt-3 px-1.5 sm:px-4 flex overflow-hidden">
                         <Tab.Panels className="flex-1 overflow-y-auto hiddenScrollbar py-4">
+
                           <Tab.Panel>
                             <div className="transition-opacity animate-[myblur_0.4s_ease-in-out]">
                               <CarsSearchForm />
                             </div>
                           </Tab.Panel>
+
                         </Tab.Panels>
                       </div>
                       <div className="px-4 py-3 bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 flex justify-between">

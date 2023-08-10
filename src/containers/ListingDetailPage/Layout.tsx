@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
+import { imageGallery as listingStayImageGallery } from "./listing-stay-detail/constant";
 import { imageGallery as listingCarImageGallery } from "./listing-car-detail/constant";
+import { imageGallery as listingExperienceImageGallery } from "./listing-experiences-detail/constant";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import ListingImageGallery from "components/ListingImageGallery/ListingImageGallery";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
@@ -20,9 +22,16 @@ const DetailPagetLayout = ({ children }: { children: ReactNode }) => {
   };
 
   const getImageGalleryListing = () => {
+    if (thisPathname?.includes("/listing-stay-detail")) {
+      return listingStayImageGallery;
+    }
     if (thisPathname?.includes("/listing-car-detail")) {
       return listingCarImageGallery;
     }
+    if (thisPathname?.includes("/listing-experiences-detail")) {
+      return listingExperienceImageGallery;
+    }
+
     return [];
   };
 

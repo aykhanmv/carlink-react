@@ -4,9 +4,6 @@ export interface LocationStates {
   "/"?: {};
   "/#"?: {};
   //
-  "/listing-flights"?: {};
-  //
-  "/listing-car"?: {};
   "/listing-car-map"?: {};
   "/listing-car-detail"?: {};
   //
@@ -33,11 +30,10 @@ export interface LocationStates {
   "/add-listing-10"?: {};
   //
   "/author"?: {};
-  "/search"?: {}; 
+  "/search"?: {};
   "/about"?: {};
   "/contact"?: {};
   "/login"?: {};
-
   "/signup"?: {};
   "/forgot-pass"?: {};
   "/page404"?: {};
