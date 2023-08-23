@@ -31,12 +31,14 @@ const loginSocials = [
 ];
 
 const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
-  const [firstName, setFirstName] = useState(""); 
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [selectedUserChoice, setSelectedUserChoice] = useState(userChoices[0]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [responseMessage, setResponseMessage] = useState(''); // State to hold response message
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // State to track form submission
 
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -52,22 +54,23 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
       email: email,
       password: password,
     };
-  
+
     const response = await fetch("http://127.0.0.1:8000/api/v1/register/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(registrationData), 
+      body: JSON.stringify(registrationData),
     });
-  
+
     if (response.ok) {
-      console.log("Registration successful");
+      setResponseMessage('Registration successful');
     } else {
-      console.error("Registration failed with status:", response.status);
       const errorText = await response.text();
-      console.error("Error details:", errorText);
+      setResponseMessage(`Registration failed with status: ${response.status}. Error details: ${errorText}`);
     }
+
+    setIsFormSubmitted(true); // Set form submission status
   };
   const handleUserChoiceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedUserChoice(e.target.value);
@@ -82,6 +85,15 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
         <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
           Signup
         </h2>
+
+
+        {/* Display Response Here */}
+        {isFormSubmitted && (
+        <div className="text-center text-red-600 dark:text-red-400 mt-4">
+          {responseMessage}
+        </div>
+        )}
+
         <div className="max-w-md mx-auto space-y-6 ">
           {/* Social logins */}
           <div className="grid gap-3">
@@ -104,7 +116,7 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
           </div>
           {/* Registration form */}
           <form className="grid grid-cols-1 gap-6" onSubmit={handleSignUp}>
-          <label className="block">
+            <label className="block">
               <span className="text-neutral-800 dark:text-neutral-200">
                 First Namw
               </span>
