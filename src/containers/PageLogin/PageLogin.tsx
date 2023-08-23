@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import facebookSvg from "images/Facebook.svg";
 import twitterSvg from "images/Twitter.svg";
 import googleSvg from "images/Google.svg";
@@ -10,7 +10,6 @@ import ButtonPrimary from "shared/Button/ButtonPrimary";
 export interface PageLoginProps {
   className?: string;
 }
-
 const loginSocials = [
   {
     name: "Continue with Facebook",
@@ -28,10 +27,43 @@ const loginSocials = [
     icon: googleSvg,
   },
 ];
-
 const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Construct the request payload
+    const payload = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/v1/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        // Login successful, you can redirect or perform other actions
+        console.log("Login successful");
+      } else {
+        const data = await response.json();
+        setError(data.detail); // Display error message from the API
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
   return (
-    <div className={`nc-PageLogin ${className}`} data-nc-id="PageLogin">
+<div className={`nc-PageLogin ${className}`} data-nc-id="PageLogin">
       <Helmet>
         <title>Login || Booking React Template</title>
       </Helmet>
@@ -66,7 +98,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
             <div className="absolute left-0 w-full top-1/2 transform -translate-y-1/2 border border-neutral-100 dark:border-neutral-800"></div>
           </div>
           {/* FORM */}
-          <form className="grid grid-cols-1 gap-6" action="#" method="post">
+          <form className="grid grid-cols-1 gap-6" onSubmit={handleLogin}>
             <label className="block">
               <span className="text-neutral-800 dark:text-neutral-200">
                 Email address
@@ -75,6 +107,8 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
                 type="email"
                 placeholder="example@example.com"
                 className="mt-1"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>
             <label className="block">
@@ -84,20 +118,25 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
                   Forgot password?
                 </Link>
               </span>
-              <Input type="password" className="mt-1" />
+              <Input
+                type="password"
+                className="mt-1"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </label>
+            {error && <p className="text-red-500">{error}</p>}
             <ButtonPrimary type="submit">Continue</ButtonPrimary>
           </form>
-
-          {/* ==== */}
-          <span className="block text-center text-neutral-700 dark:text-neutral-300">
+      {/* ==== */}
+      <span className="block text-center text-neutral-700 dark:text-neutral-300">
             New user? {` `}
             <Link to="/signup">Create an account</Link>
           </span>
         </div>
       </div>
     </div>
-  );
+      );
 };
 
 export default PageLogin;

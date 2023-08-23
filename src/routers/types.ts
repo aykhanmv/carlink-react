@@ -35,6 +35,7 @@ export interface LocationStates {
   "/contact"?: {};
   "/login"?: {};
   "/signup"?: {};
+  "/register-confirmation"?: {};
   "/forgot-pass"?: {};
   "/page404"?: {};
   "/subscription"?: {};
